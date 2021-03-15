@@ -25,4 +25,4 @@ jobs:
     - name: Test
       run: cd hw1/cmake-build-debug && make ./tests && ./tests
     - name: Valgrind
-      run: valgrind --tool=memcheck --leak-check=yes src/main.c
+      run: valgrind --tool=memcheck --leak-check=yes hw1/src/main.c
