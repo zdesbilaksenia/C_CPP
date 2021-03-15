@@ -1,4 +1,3 @@
-
 name: 'All tests'
 on: [pull_request, push]
 
