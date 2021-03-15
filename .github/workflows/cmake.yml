@@ -20,8 +20,6 @@ jobs:
       run: sudo apt-get install -y cppcheck
     - name: Run Linter
       run: cd hw1/src && cppcheck *.c
-    - name: Configure
-      run: sh configure.sh
     - name: Make
       run: cd hw1/cmake-build-debug && cmake .. && make
     - name: Test
