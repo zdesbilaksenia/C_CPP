@@ -99,9 +99,9 @@ Google_Tests_run_EXTERNAL_OBJECTS =
 
 tests/Google_Tests_run: tests/CMakeFiles/Google_Tests_run.dir/tests.cpp.o
 tests/Google_Tests_run: tests/CMakeFiles/Google_Tests_run.dir/build.make
-tests/Google_Tests_run: lib/libgtestd.a
-tests/Google_Tests_run: lib/libgtest_maind.a
-tests/Google_Tests_run: lib/libgtestd.a
+tests/Google_Tests_run: lib/libgtest.a
+tests/Google_Tests_run: lib/libgtest_main.a
+tests/Google_Tests_run: lib/libgtest.a
 tests/Google_Tests_run: tests/CMakeFiles/Google_Tests_run.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ksenia/C_C++/hw1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Google_Tests_run"
 	cd /home/ksenia/C_C++/hw1/cmake-build-debug/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Google_Tests_run.dir/link.txt --verbose=$(VERBOSE)
