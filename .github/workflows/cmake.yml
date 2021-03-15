@@ -17,12 +17,12 @@ jobs:
     - name: Install CppCheck
       run: sudo apt-get install -y cppcheck
     - name: Run Linter
-      run: cd src && cppcheck *.c
+      run: cd hw1/src && cppcheck *.c
     - name: Configure
       run: sh configure.sh
     - name: Make
-      run: cd cmake-build-debug && cmake .. && make
+      run: cd hw1/cmake-build-debug && cmake .. && make
     - name: Test
-      run: cd cmake-build-debug && make ./tests && ./tests
+      run: cd hw1/cmake-build-debug && make ./tests && ./tests
     - name: Valgrind
       run: valgrind --tool=memcheck --leak-check=yes src/main.c
