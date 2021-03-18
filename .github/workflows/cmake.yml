@@ -25,4 +25,4 @@ jobs:
     - name: Test
       run: cd hw1/build && ./tests
     - name: Valgrind
-      run: valgrind --tool=memcheck --leak-check=yes hw1/tests/build/tests
+      run: valgrind --tool=memcheck --leak-check=yes hw1/build/tests
