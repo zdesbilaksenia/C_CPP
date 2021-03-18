@@ -5,6 +5,13 @@ typedef struct Date {
     int day, month, year;
 } Date;
 
+enum {
+    EQUAL = 0,
+    FIRST_DATE = 1,
+    SECOND_DATE = 2,
+    ERROR = 3
+};
+
 int put_date(Date *date);
 
 int get_date(Date *date);

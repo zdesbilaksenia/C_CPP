@@ -1,9 +1,9 @@
 #include "gtest/gtest.h"
 
 extern "C" {
-#include "../src/date.c"
-#include "../src/project.c"
-#include "../src/list.c"
+#include "date.h"
+#include "project.h"
+#include "list.h"
 }
 
 TEST(CompareDate, FirstIsBigger) {

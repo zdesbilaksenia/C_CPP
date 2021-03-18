@@ -1,4 +1,4 @@
-#include "../include/project.h"
+#include "project.h"
 
 int put_project(Project *project) {
     if (!project) {

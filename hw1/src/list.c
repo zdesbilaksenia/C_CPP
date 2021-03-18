@@ -1,4 +1,4 @@
-#include "../include/list.h"
+#include "list.h"
 
 int add(Node *node, Project *project) {
 

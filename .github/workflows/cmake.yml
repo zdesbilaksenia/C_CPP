@@ -23,6 +23,6 @@ jobs:
     - name: Make
       run: mkdir hw1/build && cd hw1/build && cmake ../ && make
     - name: Test
-      run: cd hw1/tests/build && cmake ../ && make && ./Google_Tests_run
+      run: ./tests
     - name: Valgrind
-      run: valgrind --tool=memcheck --leak-check=yes hw1/tests/build/Google_Tests_run
+      run: valgrind --tool=memcheck --leak-check=yes hw1/tests/build/tests

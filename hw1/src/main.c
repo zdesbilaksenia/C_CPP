@@ -1,5 +1,5 @@
-#include "../include/project.h"
-#include "../include/list.h"
+#include "project.h"
+#include "list.h"
 
 int main() {
 

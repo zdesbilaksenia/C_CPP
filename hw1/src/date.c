@@ -1,12 +1,5 @@
 #include <stdio.h>
-#include "../include/date.h"
-
-enum {
-    EQUAL = 0,
-    FIRST_DATE = 1,
-    SECOND_DATE = 2,
-    ERROR = 3
-};
+#include "date.h"
 
 int put_date(Date *date) {
 
