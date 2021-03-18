@@ -21,7 +21,7 @@ jobs:
     - name: Run Linter
       run: cd hw1/src && cppcheck *.c
     - name: Make
-      run: mkdir build && cd build && cmake ../ && make
+      run: mkdir hw1/build && cd hw1/build && cmake ../ && make
     - name: Test
       run: cd hw1/tests/build && cmake ../ && make && ./Google_Tests_run
     - name: Valgrind
