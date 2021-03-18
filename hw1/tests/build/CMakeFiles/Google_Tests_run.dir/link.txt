@@ -1,1 +1,0 @@
-/usr/bin/c++    -rdynamic CMakeFiles/Google_Tests_run.dir/tests.o  -o Google_Tests_run   -L/home/ksenia/C_C++/hw1/tests/build/lib  lib/libgtest.a lib/libgtest_main.a lib/libgtest.a -lpthread 

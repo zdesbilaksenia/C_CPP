@@ -1,4 +1,4 @@
-#include "lib/googletest/include/gtest/gtest.h"
+#include "gtest/gtest.h"
 
 extern "C" {
 #include "../src/date.c"
