@@ -12,7 +12,7 @@ if (CMAKE_BUILD_TYPE MATCHES Debug)
     setup_target_for_coverage_gcovr_html(
             NAME coverage
             BASE_DIRECTORY "${PROJECT_SOURCE_DIR}"
-            EXCLUDE "cmake-build-debug/*" "gtests/*" "src/main.c")
+            EXCLUDE "build/*" "gtests/*" "src/main.c")
 endif()
 
 find_package (Threads)
