@@ -39,7 +39,7 @@ TEST(CalculateSum, CorrectArgs) {
 }
 
 TEST(CalculateSum, CorrectSum1) {
-    Matrix *m = create_matrix_from_file("../in");
+    Matrix *m = create_matrix_from_file("hw2/in");
     if (!m)
         printf("ERROR");
     /*for (int i =0;i<m->rows;i++) {
