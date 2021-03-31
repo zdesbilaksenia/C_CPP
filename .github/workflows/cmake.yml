@@ -22,6 +22,8 @@ jobs:
       run: cd hw2/src && cppcheck *.c
     - name: Make
       run: mkdir hw2/build && cd hw2/build && cmake ../ && make
+    - name: Example running of programm
+      run: cd hw2/build && ./hw2 ../in
     - name: Valgrind Tests
       run: valgrind --tool=memcheck --leak-check=yes hw2/build/tests
     - name: Valgrind HW2
