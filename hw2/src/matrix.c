@@ -53,6 +53,7 @@ Matrix *create_matrix_from_file(const char *path_file) {
 
     int f = open(path_file, O_RDONLY);
     if (f < 0) {
+        printf("No FILE\n");
         return 0;
     }
 
@@ -60,8 +61,10 @@ Matrix *create_matrix_from_file(const char *path_file) {
     stat(path_file, &size);
     char *file = mmap(NULL, size.st_size, PROT_READ, MAP_SHARED, f, 0);
     close(f);
-    if (file == MAP_FAILED)
+    if (file == MAP_FAILED) {
+        printf("CAN'T MMAP");
         return 0;
+    }
 
     if (file[0] == 0 || file[2] == 0) {
         munmap(file, size.st_size);
