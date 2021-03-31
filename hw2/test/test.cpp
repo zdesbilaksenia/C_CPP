@@ -40,9 +40,14 @@ TEST(CalculateSum, CorrectArgs) {
 
 TEST(CalculateSum, CorrectSum1) {
     Matrix *m = create_matrix_from_file("../in");
+    for (int i =0;i<m->rows;i++) {
+        for (int j = 0; j < m->cols; j++) {
+            printf("%lf ", m->ptr[i * m->cols + j]);
+        }
+        printf("\n")
+    }
     double total_sum = 0;
     calculate_sum(m, &total_sum);
-    printf("%lf", total_sum);
     ASSERT_NEAR(total_sum, 57.19, 1e-6);
     free_matrix(m);
 }
