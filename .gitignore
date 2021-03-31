@@ -51,5 +51,6 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-*.idea
-/hw1/cmake-build-debug
+hw1/
+hw2/cmake-build-debug
+.idea/

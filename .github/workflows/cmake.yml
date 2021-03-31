@@ -19,10 +19,17 @@ jobs:
     - name: Install CppCheck
       run: sudo apt-get install -y cppcheck
     - name: Run Linter
-      run: cd hw1/src && cppcheck *.c
+      run: cd hw2/src && cppcheck *.c
     - name: Make
-      run: mkdir hw1/build && cd hw1/build && cmake ../ && make
-    - name: Test
-      run: cd hw1/build && ./tests
-    - name: Valgrind
-      run: valgrind --tool=memcheck --leak-check=yes hw1/build/tests
+      run: mkdir hw2/build && cd hw2/build && cmake ../ && make
+    - name: Valgrind Tests
+      run: valgrind --tool=memcheck --leak-check=yes hw2/build/tests
+    - name: Valgrind HW2
+      run: valgrind --tool=memcheck --leak-check=yes hw2/build/hw2 ../in
+    - name: Code Coverage
+      run: cd hw2/build && make coverage
+    - name: Code coverage results
+      uses: actions/upload-artifact@v2
+      with:
+        name: code-coverage-report
+        path: hw/build/coverage/index.html
