@@ -42,7 +42,7 @@ TEST(CalculateSum, CorrectSum1) {
     Matrix *m = create_matrix_from_file("../in");
     double total_sum = 0;
     calculate_sum(m, &total_sum);
-    ASSERT_LT(fabs(total_sum - 57.19), 1e-6);
+    ASSERT_NEAR(total_sum, 57.19, 1e-6);
     free_matrix(m);
 }
 
@@ -50,7 +50,7 @@ TEST(CalculateSum, CorrectSum2) {
     Matrix *m = create_matrix_from_file("../in2");
     double total_sum = 0;
     calculate_sum(m, &total_sum);
-    ASSERT_LT(fabs(total_sum - 8), 1e-6);
+    ASSERT_NEAR(total_sum, 8, 1e-6);
     free_matrix(m);
 }
 
@@ -73,7 +73,7 @@ TEST(CalculateSumEasy, CorrectSum1){
     Matrix *m = create_matrix_from_file("../in");
     double total_sum = 0;
     calculate_sum_easy(m, &total_sum);
-    ASSERT_LT(fabs(total_sum - 57.19), 1e-6);
+    ASSERT_NEAR(total_sum, 57.19, 1e-6);
     free_matrix(m);
 }
 
@@ -81,7 +81,7 @@ TEST(CalculateSumEasy, CorrectSum2) {
     Matrix *m = create_matrix_from_file("../in2");
     double total_sum = 0;
     calculate_sum_easy(m, &total_sum);
-    ASSERT_LT(fabs(total_sum - 8), 1e-6);
+    ASSERT_NEAR(total_sum, 8, 1e-6);
     free_matrix(m);
 }
 

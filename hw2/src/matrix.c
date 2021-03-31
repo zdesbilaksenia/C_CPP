@@ -1,10 +1,3 @@
-#include <malloc.h>
-#include <stdio.h>
-#include <string.h>
-#include <sys/stat.h>
-#include <sys/mman.h>
-#include <fcntl.h>
-#include <unistd.h>
 #include "../include/matrix.h"
 
 

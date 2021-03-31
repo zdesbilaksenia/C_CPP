@@ -1,6 +1,14 @@
 #ifndef HW2_MATRIX_H
 #define HW2_MATRIX_H
 
+#include <malloc.h>
+#include <stdio.h>
+#include <string.h>
+#include <sys/stat.h>
+#include <sys/mman.h>
+#include <fcntl.h>
+#include <unistd.h>
+
 typedef struct Matrix {
     size_t rows;
     size_t cols;

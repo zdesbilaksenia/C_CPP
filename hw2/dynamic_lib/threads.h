@@ -2,6 +2,10 @@
 #define HW2_THREADS_H
 
 #include "../include/matrix.h"
+#include <unistd.h>
+#include <aio.h>
+#include <malloc.h>
+#include <pthread.h>
 
 typedef struct thread_args {
     int start;

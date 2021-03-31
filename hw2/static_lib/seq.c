@@ -1,5 +1,3 @@
-#include <pthread.h>
-#include <argp.h>
 #include "seq.h"
 
 int calculate_sum_easy(Matrix* matrix, double* total_sum) {

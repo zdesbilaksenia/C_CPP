@@ -1,7 +1,3 @@
-#include <unistd.h>
-#include <aio.h>
-#include <malloc.h>
-#include <pthread.h>
 #include "threads.h"
 
 void *get_sum(void *args) {
