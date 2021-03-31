@@ -44,7 +44,7 @@ TEST(CalculateSum, CorrectSum1) {
         for (int j = 0; j < m->cols; j++) {
             printf("%lf ", m->ptr[i * m->cols + j]);
         }
-        printf("\n")
+        printf("\n");
     }
     double total_sum = 0;
     calculate_sum(m, &total_sum);
