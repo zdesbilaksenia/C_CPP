@@ -2,7 +2,7 @@ name: 'All tests'
 on: 
   push:
     branches:
-      - HW1
+      - HW2
 
 jobs:
 
