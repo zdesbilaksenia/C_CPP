@@ -6,14 +6,14 @@ set(CMAKE_C_FLAGS "-Wall -Werror -Wpedantic")
 
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/CMakeModules)
 
-if (CMAKE_BUILD_TYPE MATCHES Debug)
+
     include(CodeCoverage)
     append_coverage_compiler_flags()
     setup_target_for_coverage_gcovr_html(
             NAME coverage
             BASE_DIRECTORY "${PROJECT_SOURCE_DIR}"
             EXCLUDE "build/*" "gtests/*" "src/main.c")
-endif()
+
 
 find_package (Threads)
 
