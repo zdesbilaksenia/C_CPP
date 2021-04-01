@@ -56,17 +56,6 @@ TEST(CalculateSum, CorrectSum2) {
     free_matrix(m);
 }
 
-TEST(FillArgs, CorrectFill) {
-
-    thread_args thr_args = {0, 0, 0, 0};
-    Matrix *m = create_matrix(2, 2);
-    fill_args(m, &thr_args, 1, 4);
-    ASSERT_EQ(thr_args.start, 0);
-    ASSERT_EQ(thr_args.end, 4);
-    ASSERT_EQ(thr_args.ptr, m->ptr);
-    free_matrix(m);
-}
-
 TEST(CalculateSumEasy, InvalidArgs){
     ASSERT_EQ(calculate_sum_easy(NULL,NULL), 1);
 }
@@ -84,6 +73,16 @@ TEST(CalculateSumEasy, CorrectSum2) {
     double total_sum = 0;
     calculate_sum_easy(m, &total_sum);
     ASSERT_NEAR(total_sum, 8, 1e-6);
+    free_matrix(m);
+}
+
+TEST(CalculateSumAndCompare, CorrectSum) {
+    Matrix *m = create_matrix(10000, 5000);
+    double total_sum_seq = 0;
+    double total_sum_parall= 0;
+    calculate_sum_easy(m, &total_sum_seq);
+    calculate_sum(m, &total_sum_parall);
+    ASSERT_EQ(total_sum_seq, total_sum_parall);
     free_matrix(m);
 }
 

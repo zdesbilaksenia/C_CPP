@@ -1,5 +1,11 @@
 #include "../include/matrix.h"
-
+#include <malloc.h>
+#include <stdio.h>
+#include <string.h>
+#include <sys/stat.h>
+#include <sys/mman.h>
+#include <fcntl.h>
+#include <unistd.h>
 
 Matrix *create_matrix(size_t rows, size_t cols) {
     Matrix *m = calloc(1, sizeof(Matrix));

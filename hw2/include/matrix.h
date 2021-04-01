@@ -6,8 +6,6 @@
 #include <string.h>
 #include <sys/stat.h>
 #include <sys/mman.h>
-#include <fcntl.h>
-#include <unistd.h>
 
 typedef struct Matrix {
     size_t rows;
@@ -16,10 +14,6 @@ typedef struct Matrix {
 } Matrix;
 
 Matrix *create_matrix(size_t rows, size_t cols);
-
-void *sum_elements(void *args);
-
-void *na(void *args);
 
 Matrix *create_matrix_from_file(const char *path_file);
 

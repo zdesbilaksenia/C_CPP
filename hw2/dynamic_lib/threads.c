@@ -1,5 +1,12 @@
 #include "threads.h"
 
+typedef struct thread_args {
+    int start;
+    int end;
+    double *ptr;
+    double sum_of_row;
+} thread_args;
+
 void *get_sum(void *args) {
 
     if (!args)
@@ -43,6 +50,7 @@ int calculate_sum(Matrix *matrix, double *total_sum) {
     pthread_t *threads = calloc(num_of_threads, sizeof(pthread_t));
     if (!threads)
         return 1;
+
     int num_of_elements_in_thread = get_size(matrix) / num_of_threads;
 
     thread_args *thr_args = calloc(num_of_threads, sizeof(thread_args));
@@ -70,6 +78,11 @@ int calculate_sum(Matrix *matrix, double *total_sum) {
         *total_sum += thr_args[i].sum_of_row;
     }
 
+    for (int i = 0; i < num_of_threads; i++) {
+        thr_args[i].ptr = NULL;
+    }
+
     free(thr_args);
+
     return 0;
 }

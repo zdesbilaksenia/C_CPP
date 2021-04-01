@@ -1,10 +1,10 @@
 #include <stdio.h>
-#include <bits/types/clock_t.h>
 #include <pthread.h>
 #include <math.h>
-#include <../dynamic_lib/threads.h>
-#include "../include/matrix.h"
-#include "../static_lib/seq.h"
+#include <bits/types/clock_t.h>
+#include <threads.h>
+#include "matrix.h"
+#include "seq.h"
 
 int main(int argc, char *argv[]) {
 
