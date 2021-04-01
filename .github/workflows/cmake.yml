@@ -1,0 +1,39 @@
+name: 'All tests'
+on: 
+  push:
+    branches:
+      - HW2
+
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Valgrind
+      run: sudo apt-get install -y valgrind
+    - name: Install GoogleTests
+      run: sudo apt-get install -y googletest && sudo apt-get install libgtest-dev
+    - name: Install CppCheck
+      run: sudo apt-get install -y cppcheck
+    - name: Install gcovr
+      run: sudo apt-get install python3-setuptools && sudo pip3 install git+https://github.com/gcovr/gcovr.git
+    - name: Run Linter
+      run: cd hw2/src && cppcheck *.c
+    - name: Make
+      run: mkdir hw2/build && cd hw2/build && cmake ../ && make
+    - name: Example running of program
+      run: cd hw2/build && ./hw2 ../in
+    - name: Valgrind Tests
+      run: valgrind --tool=memcheck --leak-check=yes hw2/build/tests
+    - name: Valgrind HW2
+      run: valgrind --tool=memcheck --leak-check=yes hw2/build/hw2 hw2/in
+    - name: Code Coverage
+      run: cd hw2/build && make coverage
+    - name: Code coverage results
+      uses: actions/upload-artifact@v2
+      with:
+        name: code-coverage-report
+        path: hw2/build/coverage/index.html
