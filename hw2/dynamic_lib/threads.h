@@ -1,7 +1,7 @@
 #ifndef HW2_THREADS_H
 #define HW2_THREADS_H
 
-#include "../include/matrix.h"
+#include "matrix.h"
 #include <unistd.h>
 #include <aio.h>
 #include <malloc.h>
